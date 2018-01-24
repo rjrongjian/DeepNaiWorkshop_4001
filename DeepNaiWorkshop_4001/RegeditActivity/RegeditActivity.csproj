@@ -7,7 +7,7 @@
     <ProjectGuid>{F2730916-40FE-4DAF-9D21-4EE5B42EA230}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RegeditActivity</RootNamespace>
-    <AssemblyName>RegeditActivity</AssemblyName>
+    <AssemblyName>淘宝客订单同步工具v1.1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
