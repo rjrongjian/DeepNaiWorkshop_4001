@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DeepNaiWorkshop_4001
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             ///

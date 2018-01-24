@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A5B9917-0337-4A07-BDED-DBD73E9827F0}</ProjectGuid>
+    <ProjectGuid>{F2730916-40FE-4DAF-9D21-4EE5B42EA230}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DeepNaiWorkshop_4001</RootNamespace>
-    <AssemblyName>DeepNaiWorkshop_4001</AssemblyName>
+    <RootNamespace>RegeditActivity</RootNamespace>
+    <AssemblyName>RegeditActivity</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="ActivityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="ActivityForm.designer.cs">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bean\ActivityConst.cs" />
+    <Compile Include="Bean\RespMessage.cs" />
+    <Compile Include="DefaultSoftRegister.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoftRegister.cs" />
+    <EmbeddedResource Include="ActivityForm.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,6 +83,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DeepNaiWorkshop_4001\DeepNaiWorkshop_4001.csproj">
+      <Project>{6a5b9917-0337-4a07-bded-dbd73e9827f0}</Project>
+      <Name>DeepNaiWorkshop_4001</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyTools\MyTools.csproj">
+      <Project>{f81f9994-c616-4fce-b7e7-68e880442ae6}</Project>
+      <Name>MyTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
