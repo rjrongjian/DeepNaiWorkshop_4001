@@ -74,6 +74,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label20 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -475,6 +476,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label17);
@@ -536,6 +538,17 @@
             this.label20.Size = new System.Drawing.Size(377, 12);
             this.label20.TabIndex = 11;
             this.label20.Text = "问题咨询联系方式（QQ：1633545776），验证信息：订单同步软件咨询";
+            this.label20.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(542, 27);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(122, 23);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "测试创建pid";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainForm
             // 
@@ -616,6 +629,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button5;
     }
 }
 

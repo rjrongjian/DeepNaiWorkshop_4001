@@ -22,7 +22,7 @@ namespace RegeditActivity
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(Program.CurrentDomain_UnhandledException);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ActivityForm());
+            Application.Run(new MainForm());
         }
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {

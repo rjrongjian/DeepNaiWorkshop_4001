@@ -83,5 +83,11 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyTools\MyTools.csproj">
+      <Project>{f81f9994-c616-4fce-b7e7-68e880442ae6}</Project>
+      <Name>MyTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

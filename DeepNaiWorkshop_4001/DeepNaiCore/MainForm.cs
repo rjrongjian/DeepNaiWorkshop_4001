@@ -875,5 +875,17 @@ namespace DeepNaiCore
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //解析cookie中用于参数的字段
+            CookieContainer cookieCollectionByString = GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
+            
+            StringBuilder Header = new StringBuilder();
+            Wininet wininet = new Wininet();
+            StringBuilder postData = new StringBuilder("tag=29&gcid=0&siteid=40968507&selectact=add&newadzonename=test&t=1516795854480&_tb_token_="+ wininet.get);
+            String responseBody = wininet.PostData("http://pub.alimama.com/common/adzone/selfAdzoneCreate.json", postData.ToString(), Header);
+            
+        }
     }
 }
