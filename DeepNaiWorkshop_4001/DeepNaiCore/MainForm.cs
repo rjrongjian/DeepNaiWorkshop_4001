@@ -74,7 +74,7 @@ namespace DeepNaiCore
                 Addlogs("停止");
                 return;
             }
-            Addlogs("从tbk_parnter_tb_order获取到" + data.Rows.Count + "条已同步订单");
+            Addlogs("从tbk_tb_order获取到" + data.Rows.Count + "条已同步订单");
 
             data = DbHelperMySQL.Query(
                 "SELECT  `orderId`,`goodId`,`orderStatus`,`goodCount`,`goodUnitPrice`,`incomeRatio`,`dividedIntoRatio`,`effect`  FROM `" + txtDbName.Text.Trim() + "`.`" + dbTable + "`WHERE `createTime`>'" + starttime + " 00:00:00'").Tables[0];
@@ -200,7 +200,7 @@ namespace DeepNaiCore
                 }
                 else
                 {
-                    table = "tbk_parnter_tb_order";
+                    table = "tbk_tb_order";
                 }
 
                 if (order_status == "订单完成")

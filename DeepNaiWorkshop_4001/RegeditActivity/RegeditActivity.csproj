@@ -89,10 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="order_logo.ico" />
+    <Content Include="Resources\Config.ini" />
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\order_logo.ico" />
     <Content Include="Resources\order_logo.png" />
-    <Content Include="tbk_tb_order.sql" />
+    <Content Include="Resources\tbk_tb_order.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeepNaiCore\DeepNaiCore.csproj">

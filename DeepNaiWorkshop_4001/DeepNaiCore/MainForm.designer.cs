@@ -73,6 +73,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -264,7 +265,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(226, 23);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "mm_110367295_40948829_197098228";
+            this.textBox1.Text = "mm_111111_11111_111111";
             this.textBox1.Visible = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -301,7 +302,7 @@
             this.txt_server.Name = "txt_server";
             this.txt_server.Size = new System.Drawing.Size(197, 26);
             this.txt_server.TabIndex = 3;
-            this.txt_server.Text = "192.168.0.77";
+            this.txt_server.Text = "192.168.0.1";
             this.txt_server.TextChanged += new System.EventHandler(this.txt_server_TextChanged);
             // 
             // txt_name
@@ -319,7 +320,7 @@
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(197, 26);
             this.txt_pass.TabIndex = 5;
-            this.txt_pass.Text = "adpopo1234";
+            this.txt_pass.Text = "root";
             this.txt_pass.TextChanged += new System.EventHandler(this.txt_pass_TextChanged);
             // 
             // groupBox1
@@ -353,7 +354,7 @@
             this.txtDbName.Name = "txtDbName";
             this.txtDbName.Size = new System.Drawing.Size(197, 26);
             this.txtDbName.TabIndex = 15;
-            this.txtDbName.Text = "zth";
+            this.txtDbName.Text = "test";
             this.txtDbName.TextChanged += new System.EventHandler(this.txtDbName_TextChanged);
             // 
             // label13
@@ -371,7 +372,7 @@
             this.txtTable.Name = "txtTable";
             this.txtTable.Size = new System.Drawing.Size(197, 26);
             this.txtTable.TabIndex = 13;
-            this.txtTable.Text = "tbk_parnter_tb_order";
+            this.txtTable.Text = "tbk_tb_order";
             this.txtTable.TextChanged += new System.EventHandler(this.txtTable_TextChanged);
             // 
             // label12
@@ -408,7 +409,7 @@
             this.txt_port.Name = "txt_port";
             this.txt_port.Size = new System.Drawing.Size(197, 26);
             this.txt_port.TabIndex = 10;
-            this.txt_port.Text = "3307";
+            this.txt_port.Text = "3306";
             this.txt_port.TextChanged += new System.EventHandler(this.txt_port_TextChanged);
             // 
             // label6
@@ -524,13 +525,24 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(12, 561);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(377, 12);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "问题咨询联系方式（QQ：1633545776），验证信息：订单同步软件咨询";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 586);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button4);
@@ -542,7 +554,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "择天惠-订单同步工具";
+            this.Text = "深奈工坊-订单同步工具";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
@@ -603,6 +615,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label20;
     }
 }
 
