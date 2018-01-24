@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>order_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -85,12 +88,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="order_logo.ico" />
     <Content Include="Resources\logo.png" />
+    <Content Include="Resources\order_logo.ico" />
+    <Content Include="Resources\order_logo.png" />
+    <Content Include="tbk_tb_order.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DeepNaiWorkshop_4001\DeepNaiWorkshop_4001.csproj">
-      <Project>{6a5b9917-0337-4a07-bded-dbd73e9827f0}</Project>
-      <Name>DeepNaiWorkshop_4001</Name>
+    <ProjectReference Include="..\DeepNaiCore\DeepNaiCore.csproj">
+      <Project>{1bc1efd8-d170-4b00-81cb-b25520b265df}</Project>
+      <Name>DeepNaiCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyTools\MyTools.csproj">
       <Project>{f81f9994-c616-4fce-b7e7-68e880442ae6}</Project>

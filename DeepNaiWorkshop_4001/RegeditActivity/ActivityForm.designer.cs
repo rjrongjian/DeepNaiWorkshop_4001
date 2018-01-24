@@ -143,9 +143,9 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(22, 246);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(323, 12);
+            this.label6.Size = new System.Drawing.Size(185, 12);
             this.label6.TabIndex = 8;
-            this.label6.Text = "49元购买注册码，pc端软件、app定制，咨询QQ：1633545776";
+            this.label6.Text = "购买注册码，咨询QQ：1633545776";
             // 
             // groupBox2
             // 
@@ -165,16 +165,16 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(365, 12);
             this.label5.TabIndex = 1;
-            this.label5.Text = "通过更巨吸引力的券信息，在社交平台进行引流。例如：淘宝评价。";
+            this.label5.Text = "注意：数据库是mysql版本。";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(28, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(329, 12);
+            this.label4.Size = new System.Drawing.Size(89, 12);
             this.label4.TabIndex = 0;
-            this.label4.Text = "淘客设置券信息，生成“优惠券领取”和“用券下单”截图，";
+            this.label4.Text = "软件启动后，设置好参数，自动将订单信息同步到数据库表，";
             // 
             // ActivityForm
             // 
@@ -187,7 +187,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ActivityForm";
-            this.Text = "天猫评价水印助手（优惠券截图生成器）-软件激活";
+            this.Text = "淘宝联盟订单同步工具-软件激活";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ActivityForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

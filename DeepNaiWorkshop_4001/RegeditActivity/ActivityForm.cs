@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyTools;
-using DeepNaiWorkshop_4001;
+using DeepNaiCore;
 
 namespace RegeditActivity
 {
