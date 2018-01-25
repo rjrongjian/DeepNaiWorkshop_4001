@@ -53,6 +53,7 @@
     <Compile Include="HttpCode\HttpCode.cs" />
     <Compile Include="HttpCode\HttpItems.cs" />
     <Compile Include="HttpCode\HttpResults.cs" />
+    <Compile Include="HttpCode\MyCookie.cs" />
     <Compile Include="HttpCode\OtherHelper.cs" />
     <Compile Include="HttpCode\XJHTTP.cs" />
     <Compile Include="IniHelper.cs" />

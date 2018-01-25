@@ -13,6 +13,8 @@ using HttpCodeLib;
 using System.Runtime.InteropServices;
 using DeepNaiCore.Util;
 using MySql.Data.MySqlClient;
+using DeepNaiCore.HttpCode;
+using MyTools;
 
 namespace DeepNaiCore
 {
@@ -876,15 +878,27 @@ namespace DeepNaiCore
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)//测试创建pid
         {
             //解析cookie中用于参数的字段
             CookieContainer cookieCollectionByString = GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
-            
-            StringBuilder Header = new StringBuilder();
+              
+            StringBuilder header = new StringBuilder();
+            header.Append("User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36\r\n");
+            header.Append("Content-Type:application/x-www-form-urlencoded; charset=UTF-8\r\n");
+            header.Append("Accept:application/json, text/javascript, */*; q=0.01\r\n");
+            header.Append("Accept-Encoding:gzip, deflate\r\n");
+            header.Append("Accept-Language:zh-CN,zh;q=0.8\r\n");
+            header.Append("Host: pub.alimama.com\r\n");
+            header.Append("Origin:http://pub.alimama.com\r\n");
+            header.Append("X-Requested-With:XMLHttpRequest\r\n");
+            header.Append("Cookie:" + DT.Cookie);
             Wininet wininet = new Wininet();
-            StringBuilder postData = new StringBuilder("tag=29&gcid=0&siteid=40968507&selectact=add&newadzonename=test&t=1516795854480&_tb_token_="+ wininet.get);
-            String responseBody = wininet.PostData("http://pub.alimama.com/common/adzone/selfAdzoneCreate.json", postData.ToString(), Header);
+            StringBuilder postData = new StringBuilder("tag=29&gcid=0&siteid=40968507&selectact=add&newadzonename=test&t="+DateTool.GetCurrentTimeStamp()+ "&_tb_token_="+ MyCookie.GetCookie("_tb_token_", cookieCollectionByString));
+            Console.WriteLine("当前post数据："+ postData.ToString());
+
+            String responseBody = wininet.PostData("http://pub.alimama.com/common/adzone/selfAdzoneCreate.json", postData.ToString(), header);
+            Console.WriteLine("响应内容："+ responseBody);
             
         }
     }
