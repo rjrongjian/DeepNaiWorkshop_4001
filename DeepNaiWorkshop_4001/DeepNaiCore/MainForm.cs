@@ -564,6 +564,7 @@ namespace DeepNaiCore
         private void MainForm_Load(object sender, EventArgs e)
         {
             //淘宝联盟账号 combox
+            /*
             IList<TbUnionAccountBean> infoList = new List<TbUnionAccountBean>();
             String accountArr = IniHelper.GetIniKeyValue("淘宝联盟账号", "集合");
             if (String.IsNullOrEmpty(accountArr))
@@ -587,7 +588,8 @@ namespace DeepNaiCore
 
                     }
                 }
-            }
+            }*/
+            IList<TbUnionAccountBean> infoList = DataUtil.infoList;
             if (infoList.Count == 0)
             {
                 Addlogs("淘宝联盟账号读取失败，请检查Config.ini是否配置淘宝联盟账号-集合\n格式：账号1|账号1id#账号1|账号1id" );

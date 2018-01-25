@@ -313,6 +313,10 @@ namespace DeepNaiCore
             {
                 DT.Token = this.GetToken(DT.Cookie)[0];
                 this.test_mm();
+
+                //登路成功后，获取账号信息
+
+
                 base.Close();
             }
         }
