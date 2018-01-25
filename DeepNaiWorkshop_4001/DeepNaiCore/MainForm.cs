@@ -96,7 +96,7 @@ namespace DeepNaiCore
                 Addlogs("停止");
                 return;
             }
-            Addlogs("从" + dbTable + "获取到" + data.Rows.Count + "条已同步订单");
+            //Addlogs("从" + dbTable + "获取到" + data.Rows.Count + "条已同步订单");
             string endtime = DateTime.Now.ToShortDateString().Replace("/", "-");
             string url = "http://pub.alimama.com/report/getTbkPaymentDetails.json?spm=a219t.7664554.1998457203.57.493a27d77xCKBm&queryType=1&payStatus=&DownloadID=DOWNLOAD_REPORT_INCOME_NEW&startTime=" +
                 starttime + "&endTime=" + endtime;
@@ -721,10 +721,7 @@ namespace DeepNaiCore
             return true;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
