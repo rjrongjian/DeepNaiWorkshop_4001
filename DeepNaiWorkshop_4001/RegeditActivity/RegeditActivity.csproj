@@ -89,10 +89,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="order_logo.ico" />
-    <Content Include="Resources\Config.ini" />
+    <Content Include="Config.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\logo.png" />
     <Content Include="Resources\order_logo.ico" />
     <Content Include="Resources\order_logo.png" />
+    <Content Include="Orders\tbk_tb_order.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\tbk_tb_order.sql" />
   </ItemGroup>
   <ItemGroup>
@@ -108,5 +113,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
