@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using HttpCodeLib;
-
+using Newtonsoft.Json;
 
 namespace DeepNaiCore
 {
@@ -141,7 +141,9 @@ namespace DeepNaiCore
                         if (flag)
                         {
                             DT.Token = this.GetToken(DT.Cookie)[0];
-                            this.test_mm();
+                            string accountInfo = this.test_mm();
+                            //登路成功后，解析账号信息
+                            parseAccountInfo(accountInfo);
                             base.Close();
                         }
                     }
@@ -265,6 +267,37 @@ namespace DeepNaiCore
             }
         }
 
+        private void parseAccountInfo(string accountInfo)
+        {
+            //{"data":{"imgUrlPrefix":"//img.alicdn.com/tfscom","loanLimit":null,"memberid":122256425,"tkMemberRank":2,"isPrivateCouponAlert":false,"newVersion":1,"hasPubPermission":"1","env":"product","avatar":"//img.alicdn.com/bao/uploaded/i2/TB1BJAzKVXXXXc2XVXX4MN2OVXX-160-170.png","mmNick":"走着去南方","userType":1,"ip":"119.98.77.39"},"info":{"message":null,"ok":true},"ok":true,"invalidKey":null}
+            //此处模拟在不建实体类的情况下，反转将json返回dynamic对象
+            DataPassWithinForm.InfoList = new List<TbUnionAccountBean>();
+            try
+            {
+                var dynamicObject = JsonConvert.DeserializeObject<dynamic>(accountInfo);
+                if (dynamicObject.data.memberid == null)
+                {
+                    DataPassWithinForm.InfoList.Add(new TbUnionAccountBean { Id = "11111111", Name = "未能读取到账号" });
+
+                    MessageBox.Show("淘宝联盟账号读取失败，使用默认账号拼接pid，所以数据库表中pid无意义");
+                }
+                else
+                {
+                    DataPassWithinForm.InfoList.Add(new TbUnionAccountBean { Id = (String)dynamicObject.data.memberid, Name = (String)dynamicObject.data.mmNick });
+                }
+            }
+            catch (Exception ee)
+            {
+                DataPassWithinForm.InfoList.Add(new TbUnionAccountBean { Id = "11111111", Name = "未能读取到账号" });
+                Console.WriteLine(ee);
+                MessageBox.Show("淘宝联盟账号读取失败，使用默认账号拼接pid，所以数据库表中pid无意义");
+            }
+
+            Console.WriteLine("---------------------" + DataPassWithinForm.InfoList[0].Id);
+
+            DataPassWithinForm.ComboBoxInMainForm.DataSource = DataPassWithinForm.InfoList;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (!(this.webBrowser1.Document == null))
@@ -312,11 +345,9 @@ namespace DeepNaiCore
             if (flag)
             {
                 DT.Token = this.GetToken(DT.Cookie)[0];
-                this.test_mm();
-
-                //登路成功后，获取账号信息
-
-
+                string accountInfo = this.test_mm();
+                //登路成功后，解析账号信息
+                parseAccountInfo(accountInfo);
                 base.Close();
             }
         }
@@ -332,7 +363,7 @@ namespace DeepNaiCore
             IniHelper.FilePath = DT.ConfigPath;
             IniHelper.WriteIniKey("MinOrMax", "way", "normal");
         }
-        private void test_mm()
+        private string test_mm()
         {
             IniHelper.FilePath = DT.ConfigPath;
             string cookie = DT.Cookie;
@@ -350,6 +381,7 @@ namespace DeepNaiCore
                 ContentType = "application/x-www-form-urlencoded"
             });
             reString = httpResults.Html;
+            
             try
             {
                
@@ -360,6 +392,7 @@ namespace DeepNaiCore
                 //  MessageBox.Show("系统繁忙，请稍后再试");
                 base.Close();
             }
+            return reString;
         }
         private Regex reg;
         private List<string> GetToken(string reString)
@@ -563,5 +596,9 @@ namespace DeepNaiCore
             this.PerformLayout();
 
         }
+
+     
     }
+
+    
 }

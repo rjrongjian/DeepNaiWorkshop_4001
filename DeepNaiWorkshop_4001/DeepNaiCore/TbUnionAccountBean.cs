@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DeepNaiCore
 {
-    class TbUnionAccountBean
+    public class TbUnionAccountBean
     {
 
         public string Id { get; set; }//淘宝联盟

@@ -6,7 +6,7 @@ namespace DeepNaiCore.Util
 {
     class DataUtil
     {
-        public static IList<TbUnionAccountBean> infoList = new List<TbUnionAccountBean>();
+        
 
         /// <summary>
         /// 去除浮点数后面的无效0，例如：2.50

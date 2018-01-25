@@ -32,6 +32,7 @@ namespace DeepNaiCore
             if (!string.IsNullOrEmpty(DT.Token))
             {
                 label2.Text = "已登录";
+                label2.ForeColor = Color.Green;
             }
         }
 
@@ -588,7 +589,7 @@ namespace DeepNaiCore
 
                     }
                 }
-            }*/
+            }
             IList<TbUnionAccountBean> infoList = DataUtil.infoList;
             if (infoList.Count == 0)
             {
@@ -599,6 +600,11 @@ namespace DeepNaiCore
             this.tbUnionAccountCombox.DataSource = infoList;
             this.tbUnionAccountCombox.ValueMember = "Id";
             this.tbUnionAccountCombox.DisplayMember = "Name";
+            */
+            //淘宝联盟账号 combox
+            this.tbUnionAccountCombox.ValueMember = "Id";
+            this.tbUnionAccountCombox.DisplayMember = "Name";
+            DataPassWithinForm.ComboBoxInMainForm = this.tbUnionAccountCombox;
 
             DbHelperMySQL.connectionString =
               "Database='" + txtTable.Text.Trim() + "';Data Source='" + txt_server.Text + "';User Id='" + txt_name.Text + "';Password='" + txt_pass.Text + "';port='" + txt_port.Text + "';charset='utf8';pooling=true";
