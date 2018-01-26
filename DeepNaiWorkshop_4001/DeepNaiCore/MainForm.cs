@@ -102,7 +102,7 @@ namespace DeepNaiCore
             string url = "http://pub.alimama.com/report/getTbkPaymentDetails.json?spm=a219t.7664554.1998457203.57.493a27d77xCKBm&queryType=1&payStatus=&DownloadID=DOWNLOAD_REPORT_INCOME_NEW&startTime=" +
                 starttime + "&endTime=" + endtime;
             string Ua = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.108 Safari/537.36 2345Explorer/8.6.1.15524";
-            CookieContainer cookieCollectionByString = GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
+            CookieContainer cookieCollectionByString = MyCookie.GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
             if (donging == false)
             {
                 Addlogs("停止");
@@ -459,97 +459,7 @@ namespace DeepNaiCore
             return result;
         }
 
-        public static CookieContainer GetCookieCollectionByString(string cookieHead, string defaultDomain)
-        {
-            CookieContainer cookieContainer = new CookieContainer();
-            CookieContainer result;
-            if (cookieHead == null)
-            {
-                result = null;
-            }
-            else if (defaultDomain == null)
-            {
-                result = null;
-            }
-            else
-            {
-                string[] array = cookieHead.Split(new char[]
-                    {
-                        ';'
-                    });
-                for (int i = 0; i < array.Length; i++)
-                {
-                    Cookie cookieFromString = GetCookieFromString(array[i].Trim(), defaultDomain);
-                    if (cookieFromString != null)
-                    {
-                        cookieContainer.Add(cookieFromString);
-                    }
-                }
-                result = cookieContainer;
-            }
-            return result;
-
-        }
-
-        public static Cookie GetCookieFromString(string cookieString, string defaultDomain)
-        {
-
-            Cookie result;
-            if (cookieString == null || defaultDomain == null)
-            {
-                result = null;
-            }
-            else
-            {
-                string[] array = cookieString.Split(new char[]
-                    {
-                        ','
-                    });
-                Hashtable hashtable = new Hashtable();
-                for (int i = 0; i < array.Length; i++)
-                {
-                    string text = array[i].Trim();
-                    int num = text.IndexOf("=", StringComparison.Ordinal);
-                    if (num > 0)
-                    {
-                        hashtable.Add(text.Substring(0, num), text.Substring(num + 1));
-                    }
-                }
-                Cookie cookie = new Cookie();
-                foreach (object current in hashtable.Keys)
-                {
-                    if (current.ToString() == "path")
-                    {
-                        cookie.Path = hashtable[current].ToString();
-                    }
-                    else if (!(current.ToString() == "expires"))
-                    {
-                        if (current.ToString() == "domain")
-                        {
-                            cookie.Domain = hashtable[current].ToString();
-                        }
-                        else
-                        {
-                            cookie.Name = current.ToString();
-                            cookie.Value = hashtable[current].ToString();
-                        }
-                    }
-                }
-                if (cookie.Name == "")
-                {
-                    result = null;
-                }
-                else
-                {
-                    if (cookie.Domain == "")
-                    {
-                        cookie.Domain = defaultDomain;
-                    }
-                    result = cookie;
-                }
-            }
-            return result;
-        }
+       
 
 
         private void Addlogs(string log)
@@ -886,7 +796,7 @@ namespace DeepNaiCore
         private void button5_Click(object sender, EventArgs e)//测试创建pid
         {
             //解析cookie中用于参数的字段
-            CookieContainer cookieCollectionByString = GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
+            CookieContainer cookieCollectionByString = MyCookie.GetCookieCollectionByString(DT.Cookie, "pub.alimama.com");
               
             StringBuilder header = new StringBuilder();
             header.Append("User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36\r\n");
@@ -906,5 +816,11 @@ namespace DeepNaiCore
             Console.WriteLine("响应内容："+ responseBody);
             
         }
+
+        private void mediaTabControl_SelectedIndexChanged(object sender, EventArgs e)//媒体切换时事件
+        {
+            Console.WriteLine("媒体切换时事件");
+        }
+
     }
 }

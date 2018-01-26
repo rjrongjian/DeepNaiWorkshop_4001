@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bean\AppMediaBean.cs" />
+    <Compile Include="Bean\GuideMediaBean.cs" />
+    <Compile Include="Bean\WebMediaBean.cs" />
     <Compile Include="DataPassWithinForm.cs" />
     <Compile Include="DbHelperMySQL.cs" />
     <Compile Include="DT.cs" />
@@ -79,6 +82,7 @@
     </Compile>
     <Compile Include="TbUnionAccountBean.cs" />
     <Compile Include="Util\DataUtil.cs" />
+    <Compile Include="TbUnionService\TbUnionApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="404-160.ico" />
@@ -108,5 +112,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

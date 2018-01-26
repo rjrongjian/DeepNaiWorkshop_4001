@@ -164,7 +164,7 @@ namespace HttpCodeLib
         /// POST
         /// </summary>
         /// <param name="Url">地址</param>
-        /// <param name="postData">提交数据</param>
+        /// <param name="postData">提交数数据，如果为空，按get方式提交</param>
         ///  <param name="Header">自定义数据头</param>
         /// <returns></returns>
         public string PostData(string Url, string postData, StringBuilder Header = null)
