@@ -110,6 +110,7 @@
             this.tbUnionAccountCombox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,6 +171,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -969,6 +971,17 @@
             this.label20.TabIndex = 26;
             this.label20.Text = "**注意：任何操作需先登录！！";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(7, 585);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(415, 21);
+            this.label32.TabIndex = 17;
+            this.label32.Text = "使用疑问，定制业务联系，QQ：1633545776";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -985,7 +998,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "-订单同步工具";
+            this.Text = "深奈工坊-订单同步工具";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
@@ -1104,6 +1117,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label32;
     }
 }
 

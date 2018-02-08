@@ -474,6 +474,10 @@ namespace DeepNaiCore
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //隐藏创建pid的选项卡
+            tabControl1.TabPages[1].Parent = null;
+
+
             //淘宝联盟账号 combox
             /*
             IList<TbUnionAccountBean> infoList = new List<TbUnionAccountBean>();

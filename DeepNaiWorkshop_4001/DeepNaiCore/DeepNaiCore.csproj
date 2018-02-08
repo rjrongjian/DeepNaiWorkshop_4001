@@ -80,6 +80,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Redis\CacheHelper.cs" />
+    <Compile Include="Redis\Demo.cs" />
+    <Compile Include="Redis\ICache.cs" />
+    <Compile Include="Redis\Redis.cs" />
     <Compile Include="TbUnionAccountBean.cs" />
     <Compile Include="Util\DataUtil.cs" />
     <Compile Include="TbUnionService\TbUnionApi.cs" />
